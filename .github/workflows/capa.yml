@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run PR Diff and Line Count Action
-        uses: qododavid/capa/.github/actions/qodo-cover@main
+        uses: qododavid/capa/.github/actions/qodo-cover@v1
         with:
           greeting: "Hi there"  # Custom greeting specified by the user
           github_token: ${{ secrets.GITHUB_TOKEN }}
