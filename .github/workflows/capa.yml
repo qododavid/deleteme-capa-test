@@ -11,6 +11,7 @@ on:
 
 permissions:
   pull-requests: write  # Allows commenting on pull requests
+  contents: write  # Allows reading and writing files
 
 jobs:
   pr-diff-and-line-count:
