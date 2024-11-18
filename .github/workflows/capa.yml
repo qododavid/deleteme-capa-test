@@ -1,0 +1,19 @@
+name: PR Diff and Line Count Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - labeled
+
+jobs:
+  pr-diff-and-line-count:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run PR Diff and Line Count Action
+        uses: qododavid/capa/.github/actions/qodo-cover@main
+        with:
+          greeting: "Hi there" # Custom greeting
