@@ -9,6 +9,9 @@ on:
       - synchronize
       - labeled
 
+permissions:
+  pull-requests: write  # Allows commenting on pull requests
+
 jobs:
   pr-diff-and-line-count:
     runs-on: ubuntu-latest
