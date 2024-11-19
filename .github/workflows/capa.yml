@@ -1,13 +1,11 @@
-name: PR Diff and Line Count Workflow
+name: Run the qodo-cover action
 
 on:
   pull_request:
     branches:
       - main
     types:
-      - opened
-      - synchronize
-      - labeled
+      - opened  # Trigger only when a pull request is opened
 
 permissions:
   pull-requests: write  # Allows commenting on pull requests
@@ -17,8 +15,8 @@ jobs:
   pr-diff-and-line-count:
     runs-on: ubuntu-latest
     steps:
-      - name: Run PR Diff and Line Count Action
+      - name: qodo-cover
         uses: qododavid/capa/.github/actions/qodo-cover@v1
         with:
-          greeting: "Hi there"  # Custom greeting specified by the user
+          greeting: "Hi there"
           github_token: ${{ secrets.GITHUB_TOKEN }}
