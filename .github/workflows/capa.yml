@@ -12,7 +12,7 @@ permissions:
   contents: write  # Allows reading and writing files
 
 jobs:
-  pr-diff-and-line-count:
+  run-qodo-cover:
     runs-on: ubuntu-latest
     steps:
       - name: qodo-cover
@@ -20,3 +20,5 @@ jobs:
         with:
           greeting: "Hi there"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
