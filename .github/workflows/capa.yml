@@ -18,7 +18,7 @@ jobs:
       - name: qodo-cover
         uses: qododavid/capa/.github/actions/qodo-cover@v1
         with:
-          greeting: "Hi there"
+          greeting: Hi there
           github_token: ${{ secrets.GITHUB_TOKEN }}
           project_language: python
           project_root: templated_tests/python_fastapi
