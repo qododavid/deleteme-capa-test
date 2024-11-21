@@ -27,4 +27,4 @@ jobs:
           model: gpt-4o
 
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}docdfdaddde
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
