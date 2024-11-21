@@ -19,4 +19,3 @@ While developing the Qodo Cover agent we tested it on some open source repositor
 test
 1
 2
-3
