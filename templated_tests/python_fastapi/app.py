@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from datetime import date, datetime
 import math
+import trig
 
 app = FastAPI()
 
@@ -123,3 +124,40 @@ async def echo(message: str):
     Returns the same message that is sent to it.
     """
     return {"message": message}
+
+
+@app.get("/trig/{op}/{arg}")
+async def trig_operation(op: str, arg: float):
+    """
+    Perform trigonometric operations on angles in degrees.
+    
+    Parameters:
+    - op (str): The operation to perform (sin, cos, tan, sec, csc, cot)
+    - arg (float): The angle in degrees
+    
+    Returns:
+    - dict: A dictionary containing the result of the trigonometric operation
+    
+    Raises:
+    - HTTPException: If the operation is invalid or if the operation is undefined for the given angle
+    """
+    operations = {
+        'sin': trig.sin,
+        'cos': trig.cos,
+        'tan': trig.tan,
+        'sec': trig.sec,
+        'csc': trig.csc,
+        'cot': trig.cot
+    }
+    
+    if op not in operations:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid operation. Valid operations are: {', '.join(operations.keys())}"
+        )
+    
+    try:
+        result = operations[op](arg)
+        return {"result": round(result, 6)}  # Round to 6 decimal places for cleaner output
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
