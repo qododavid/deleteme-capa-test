@@ -24,7 +24,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install pytest pytest-cov fastapi httpx
+          python3 -m pip install pytest pytest-cov fastapi httpx pydantic[email]
 
       - name: qodo-cover
         uses: qododavid/capa/.github/actions/qodo-cover@v0.1.0
