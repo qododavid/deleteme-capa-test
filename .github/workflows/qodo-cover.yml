@@ -32,8 +32,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r templated_tests/python_fastapi/requirements.txt
 
-      - name: qodo-cover
-        uses: qododavid/capa/.github/actions/qodo-cover@v0.1.1
+      - name: Qodo Cover
+        uses: qodo-ai/qodo-cover/.github/actions/qodo-cover@v0.1.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           project_language: python
