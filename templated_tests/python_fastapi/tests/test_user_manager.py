@@ -1,7 +1,7 @@
 import pytest
 from datetime import datetime
 from pydantic import EmailStr
-from user_manager import UserManager, User
+from myapp.user_manager import UserManager, User
 
 @pytest.fixture
 def user_manager():
